@@ -1,7 +1,7 @@
 close all;
 clc;
 lp = lowpass();
-[y fs] = audioread('eight.mp3');
+[y fs] = audioread('nine.mp3');
 
 % recObj = audiorecorder(8000,8,1);%streo recording two channels , 8-bits , 8000 sampls
 % disp('Start speaking.')
@@ -33,12 +33,12 @@ ylabel('magnitude');
 
 [max_value, max_index] = max(fftSignal);
 max_value = real(max_value)^2 + imag(max_value)^2;
-test_index = f(max_index);
-test_index = test_index * 100;
-test_index = test_index .^2;
+test_maxfreq = f(max_index);
+test_maxfreq = test_maxfreq * 100;
+test_maxfreq = test_maxfreq .^2;
 figure;
 stem(pitch_indexs); grid on;    title('pitch frequencies');
-squared_diff = abs(pitch_indexs - test_index);
+squared_diff = abs(pitch_indexs - test_maxfreq);
 figure;
 stem(squared_diff); grid on; title('squared diff');
 lsd = find(squared_diff == min(squared_diff)) - 1

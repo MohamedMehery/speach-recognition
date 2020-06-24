@@ -1,0 +1,32 @@
+﻿  main.cpp
+  fft.cpp
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(54): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(55): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(93): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(94): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(109): error C2131: expression did not evaluate to a constant
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(109): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(109): note: see usage of 'signalsize'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(110): error C2131: expression did not evaluate to a constant
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(110): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(110): note: see usage of 'signalsize'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(111): error C2131: expression did not evaluate to a constant
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(111): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(111): note: see usage of 'signalsize'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(115): error C2228: left of '.Re' must have class/struct/union
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(115): note: type is 'complex [signalsize]'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(116): error C2228: left of '.Re' must have class/struct/union
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(116): note: type is 'complex [signalsize]'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(123): error C2228: left of '.Re' must have class/struct/union
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(123): note: type is 'complex [signalsize]'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(124): error C2228: left of '.Im' must have class/struct/union
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(124): note: type is 'complex [signalsize]'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(129): error C2228: left of '.Re' must have class/struct/union
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(129): note: type is 'complex [signalsize]'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(129): error C2228: left of '.Im' must have class/struct/union
+  c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(129): note: type is 'complex [signalsize]'
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(140): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(141): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(142): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+c:\users\mohamed mehery\desktop\dsp\cpp\dsp\dsp\fft.cpp(143): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+  Generating Code...
