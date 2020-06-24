@@ -1,7 +1,7 @@
 close all;
 clc;
 lp = lowpass();
-[y fs] = audioread('nine.mp3');
+[y fs] = audioread('zero.mp3');
 
 % recObj = audiorecorder(8000,8,1);%streo recording two channels , 8-bits , 8000 sampls
 % disp('Start speaking.')
@@ -21,7 +21,7 @@ fftSignal = fft(y);
 %apply fftshift to put it in the form we are used to (see documentation)
 fftSignal = fftshift(fftSignal);
 %Next, calculate the frequency axis, which is defined by the sampling rate
-f = 4000*linspace(-1,1,2*fs); % each frequency sample represent 0.25hz => 4k / 16
+	 % each frequency sample represent 0.25hz => 4k / 16
 
 %Since the signal is complex, we need to plot the magnitude to get it to
 %look right, so we use abs (absolute value)
@@ -37,9 +37,9 @@ test_maxfreq = f(max_index);
 test_maxfreq = test_maxfreq * 100;
 test_maxfreq = test_maxfreq .^2;
 figure;
-stem(pitch_indexs); grid on;    title('pitch frequencies');
+stem([0:1:9],pitch_indexs); grid on;    title('pitch frequencies');
 squared_diff = abs(pitch_indexs - test_maxfreq);
 figure;
-stem(squared_diff); grid on; title('squared diff');
+stem([0:1:9],squared_diff); grid on; title('squared diff');
 lsd = find(squared_diff == min(squared_diff)) - 1
 
