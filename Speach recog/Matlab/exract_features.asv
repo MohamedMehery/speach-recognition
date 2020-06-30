@@ -217,9 +217,16 @@ for sample_nums = 0:9
     fft_nine_samples ( :,sample_nums+1) = fft(nine_voice_samples(:,sample_nums+1));
     fft_nine_samples ( :,sample_nums+1) = fftshift(fft_nine_samples(:,sample_nums+1));
    %extract the frequency parameters
-    [freq_max_value_mtx(9,sample_nums + 1)  ,pitch_freqindex_mtx(9,sample_nums + 1)] = max(fft_nine_samples(:,sample_nums+1));
-    pitch_freq_mtx(9,sample_nums + 1) = f(pitch_freqindex_mtx(9,sample_nums + 1));
+    [freq_max_value_mtx(10,sample_nums + 1)  ,pitch_freqindex_mtx(10,sample_nums + 1)] = max(fft_nine_samples(:,sample_nums+1));
+    pitch_freq_mtx(10,sample_nums + 1) = f(pitch_freqindex_mtx(10,sample_nums + 1));
     %extract the time parameters
-    [time_max_value(9,sample_nums + 1)  ,pitch_timeindex_mtx(9,sample_nums + 1)] = max(eight_voice_samples(:,sample_nums+1));
-    pitch_time_mtx(9,sample_nums + 1) = t(pitch_timeindex_mtx(9,sample_nums + 1));    
+    [time_max_value(10,sample_nums + 1)  ,pitch_timeindex_mtx(10,sample_nums + 1)] = max(nine_voice_samples(:,sample_nums+1));
+    pitch_time_mtx(10,sample_nums + 1) = t(pitch_timeindex_mtx(10,sample_nums + 1));    
 end
+
+%% square the result
+
+pitch_freq_mtx = pitch_freq_mtx.*1;
+pitch_time_mtx = pitch_time_mtx.*10000;
+pitch_freq_mtx = pitch_freq_mtx.^2;
+pitch_time_mtx = pitch_time_mtx.^2;

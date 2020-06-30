@@ -223,3 +223,7 @@ for sample_nums = 0:9
     [time_max_value(10,sample_nums + 1)  ,pitch_timeindex_mtx(10,sample_nums + 1)] = max(nine_voice_samples(:,sample_nums+1));
     pitch_time_mtx(10,sample_nums + 1) = t(pitch_timeindex_mtx(10,sample_nums + 1));    
 end
+
+%% square the result
+pitch_freq_mtx = pitch_freq_mtx.^2;
+pitch_time_mtx = pitch_time_mtx.^2;
