@@ -225,5 +225,8 @@ for sample_nums = 0:9
 end
 
 %% square the result
+
+pitch_freq_mtx = pitch_freq_mtx.*1;
+pitch_time_mtx = pitch_time_mtx.*10000;
 pitch_freq_mtx = pitch_freq_mtx.^2;
 pitch_time_mtx = pitch_time_mtx.^2;
