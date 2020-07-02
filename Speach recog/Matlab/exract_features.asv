@@ -20,7 +20,7 @@ lp = lowpass();
 [zero_voice, fs] = audioread('zero.mp3');
 zero_voice = filter(lp,zero_voice);
 zero_voice(fs,1) = 0;
-sample_length = fs/10 ;  
+sample_length = length(zero_voice) / 10 ;  
 zero_voice_samples = zeros(sample_length , 10);
 fft_zero_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -42,7 +42,7 @@ end
 [one_voice, fs] = audioread('one.mp3');
 one_voice = filter(lp,one_voice);
 one_voice(fs,1) = 0;
-sample_length = fs/10 ;  
+sample_length = length(one_voice) / 10 ;  
 one_voice_samples = zeros(sample_length , 10);
 fft_one_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -63,7 +63,7 @@ end
 [two_voice, fs] = audioread('two.mp3');
 two_voice = filter(lp,two_voice);
 two_voice(fs,1) = 0;
-sample_length = fs/10 ;  
+sample_length = length(two_voice) / 10 ;  
 two_voice_samples = zeros(sample_length , 10);
 fft_two_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -86,7 +86,7 @@ end
 three_voice = filter(lp,three_voice);
 three_voice(fs,1) = 0;
 
-sample_length = fs/10 ;  
+sample_length = length(three_voice) / 10 ;  
 three_voice_samples = zeros(sample_length , 10);
 fft_three_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -109,7 +109,7 @@ end
 four_voice = filter(lp,four_voice);
 four_voice(fs,1) = 0;
 
-sample_length = fs/10 ;  
+sample_length = length(four_voice) / 10 ;  
 four_voice_samples = zeros(sample_length , 10);
 fft_four_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -132,7 +132,7 @@ end
 five_voice = filter(lp,five_voice);
 five_voice(fs,1) = 0;
 
-sample_length = fs/10 ;  
+sample_length = length(five_voice) / 10 ;  
 five_voice_samples = zeros(sample_length , 10);
 fft_five_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -155,7 +155,7 @@ end
 six_voice = filter(lp,six_voice);
 six_voice(fs,1) = 0;
 
-sample_length = fs/10 ;  
+sample_length = length(six_voice) / 10 ;  
 six_voice_samples = zeros(sample_length , 10);
 fft_six_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -176,9 +176,7 @@ end
 %% extract the seven voice features
 [seven_voice, fs] = audioread('seven.mp3');
 seven_voice = filter(lp,seven_voice);
-seven_voice(fs,1) = 0;
-
-sample_length = fs/10 ;  
+sample_length = length(seven_voice) / 10 ;  
 seven_voice_samples = zeros(sample_length , 10);
 fft_seven_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -199,9 +197,7 @@ end
 %% extract the eight voice features
 [eight_voice, fs] = audioread('eight.mp3');
 eight_voice = filter(lp,eight_voice);
-eight_voice(fs,1) = 0;
-
-sample_length = fs/10 ;  
+sample_length = length(eight_voice) / 10 ;  
 eight_voice_samples = zeros(sample_length , 10);
 fft_eight_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 
@@ -222,9 +218,7 @@ end
 %% extract the nine voice features
 [nine_voice, fs] = audioread('nine.mp3');
 nine_voice = filter(lp,nine_voice);
-nine_voice(fs,1) = 0;
-
-sample_length = fs/10 ;  
+sample_length = length(nine_voice) / 10 ;  
 nine_voice_samples = zeros(sample_length , 10);
 fft_nine_samples = zeros(sample_length , 10);
 f = 4000*linspace(-1,1,2*fs); 

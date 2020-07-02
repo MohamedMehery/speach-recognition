@@ -14,7 +14,7 @@ lp = lowpass();
 
 
 %% extract the input voice features
-[input_voice, fs] = audioread('one.mp3');
+[input_voice, fs] = audioread('seven.mp3');
 input_voice = filter(lp,input_voice);
 input_voice(fs,1) = 0;
 
@@ -46,8 +46,6 @@ input_pitch_freq_mtx = input_pitch_freq_mtx.*1;
 input_pitch_time_mtx = input_pitch_time_mtx.*10000;
 input_pitch_freq_mtx = input_pitch_freq_mtx.^2;
 input_pitch_time_mtx = input_pitch_time_mtx.^2;
-input_pitch_freqindex_mtx = input_pitch_freqindex_mtx.^2;
-input_pitch_timeindex_mtx = input_pitch_timeindex_mtx.^2;
 
 %get the absolute of squared_diff_mtx
 squared_freq_diff_mtx = abs(pitch_freq_mtx - input_pitch_freq_mtx);
