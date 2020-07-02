@@ -11,10 +11,18 @@ input_pitch_time_mtx =  zeros(10 , 10);
 input_freq_max_value_mtx = zeros(10 , 10);
 input_time_max_value = zeros(10 , 10);
 lp = lowpass();
+%% get record
 
+% recObj = audiorecorder(24000,8,2);%streo recording two channels , 8-bits , 24000 sampls
+% disp('Start speaking.')
+% recordblocking(recObj, 2);
+% disp('End of Recording.');
+% pause(2);
+% play(recObj);
+% input_voice = getaudiodata(recObj);
 
 %% extract the input voice features
-[input_voice, fs] = audioread('one.mp3');
+[input_voice, fs] = audioread('zero.mp3');
 input_voice = filter(lp,input_voice);
 input_voice(fs,1) = 0;
 
@@ -39,6 +47,8 @@ end
 for rows = 2:10
     input_pitch_freq_mtx(rows,:) = input_pitch_freq_mtx(1,:);
     input_pitch_time_mtx(rows,:) = input_pitch_time_mtx(1,:);
+    input_pitch_timeindex_mtx(rows,:) = input_pitch_timeindex_mtx(1,:);
+    input_pitch_freqindex_mtx(rows,:) = input_pitch_freqindex_mtx(1,:);
 end
 
 %% calculate the least squared difference
@@ -62,7 +72,18 @@ squared_freq_diff_mtx = rot90(squared_freq_diff_mtx);
 squared_time_indx_diff_mtx = rot90(squared_time_indx_diff_mtx);
 squared_freq_indx_diff_mtx = rot90(squared_freq_indx_diff_mtx);
 
-Freq_lsd = find(mean(squared_freq_diff_mtx(:,:)) == min(mean(squared_freq_diff_mtx(:,:)))) - 1
-Time_lsd = find(mean(squared_time_diff_mtx(:,:)) == min(mean(squared_time_diff_mtx(:,:)))) - 1
-Timeindx_lsd = find(mean(squared_time_indx_diff_mtx(:,:)) == min(mean(squared_time_indx_diff_mtx(:,:)))) - 1
-Freqindx_lsd = find(mean(squared_freq_indx_diff_mtx(:,:)) == min(mean(squared_freq_indx_diff_mtx(:,:)))) - 1
+Freq_lsd = find(mean(squared_freq_diff_mtx(:,:)) == min(mean(squared_freq_diff_mtx(:,:)))) - 1;
+Time_lsd = find(mean(squared_time_diff_mtx(:,:)) == min(mean(squared_time_diff_mtx(:,:)))) - 1;
+Timeindx_lsd = find(mean(squared_time_indx_diff_mtx(:,:)) == min(mean(squared_time_indx_diff_mtx(:,:)))) - 1;
+Freqindx_lsd = find(mean(squared_freq_indx_diff_mtx(:,:)) == min(mean(squared_freq_indx_diff_mtx(:,:)))) - 1;
+
+display(Freq_lsd);
+display(Time_lsd);
+display(Freqindx_lsd);
+display(Timeindx_lsd);
+if( Timeindx_lsd == Freqindx_lsd && Time_lsd == Freq_lsd) 
+    Number_is  = Freqindx_lsd;
+    display('      successful test');
+    display(Number_is  ); 
+
+end
