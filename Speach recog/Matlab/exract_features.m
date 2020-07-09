@@ -1,5 +1,6 @@
 %% Multi-parameter speach_cognit
 %we must devide the voice into 10 sample and we will do the process on each sample at time
+%DTW -> dynamic time raping to solve silience  time
 %% Initializations
 clc;
 clear all;

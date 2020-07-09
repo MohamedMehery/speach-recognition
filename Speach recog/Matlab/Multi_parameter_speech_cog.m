@@ -22,7 +22,7 @@ lp = lowpass();
 % input_voice = getaudiodata(recObj);
 
 %% extract the input voice features
-[input_voice, fs] = audioread('zero.mp3');
+[input_voice, fs] = audioread('seven.mp3');
 input_voice = filter(lp,input_voice);
 input_voice(fs,1) = 0;
 
