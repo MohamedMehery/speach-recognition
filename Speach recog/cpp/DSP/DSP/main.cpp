@@ -1,5 +1,7 @@
 #include <iostream>
 #include <complex>
+#include <random>
+
 #define MAX 200
 
 using namespace std;
@@ -40,58 +42,55 @@ void ordina(complex<double>* f1, int N) //using the reverse order in the array
 		f1[j] = f2[j];
 }
 
-void transform(complex<double>* f, int N) //
+void Up_sampling(int *input, int in_size, int *output,int sample_rate)
 {
-	ordina(f, N);    //first: reverse order
-	complex<double> *W;
-	W = (complex<double> *)malloc(N / 2 * sizeof(complex<double>));
-	W[1] = polar(1., -2. * M_PI / N);
-	W[0] = 1;
-	for (int i = 2; i < N / 2; i++)
-		W[i] = pow(W[1], i);
-	int n = 1;
-	int a = N / 2;
-	for (int j = 0; j < log2(N); j++) {
-		for (int i = 0; i < N; i++) {
-			if (!(i & n)) {
-				complex<double> temp = f[i];
-				complex<double> Temp = W[(i * a) % (n * a)] * f[i + n];
-				f[i] = temp + Temp;
-				f[i + n] = temp - Temp;
-			}
+	int new_size = (in_size * sample_rate)+(in_size % 2);
+	for (int i = 0; i < new_size; i++)
+	{		
+		if ((i % sample_rate) == 0)
+		{
+			output[i] = input[i / sample_rate];
 		}
-		n *= 2;
-		a = a / 2;
+		else
+			output[i] = 0;
 	}
-	free(W);
+}
+void Down_sampling(int *input, int in_size, int *output, int sample_rate)
+{
+	int new_size = (in_size / sample_rate)+ (in_size % 2);
+	for (int i = 0; i < new_size; i++)
+	{
+		output[i] = input[i * sample_rate];
+	}
 }
 
-void FFT(complex<double>* f, int N, double d)
+int main()
 {
-	transform(f, N);
-	for (int i = 0; i < N; i++)
-		f[i] *= d; //multiplying by step
-}
-
-int main21()
-{
-	int n;
-	do {
-		cout << "specify array dimension (MUST be power of 2)" << endl;
-		cin >> n;
-	} while (!check(n));
-	double d;
-	cout << "specify sampling step" << endl; //just write 1 in order to have the same results of matlab fft(.)
-	cin >> d;
-	complex<double> vec[MAX];
-	cout << "specify the array" << endl;
-	for (int i = 0; i < n; i++) {
-		cout << "specify element number: " << i << endl;
-		cin >> vec[i];
+	random_device rd;
+	mt19937 mt(rd());
+	uniform_int_distribution<int> dist(-5, 5);
+	int arr[5];
+	for (int i = 0; i < 5; i++)
+	{
+		arr[i] = dist(mt);
+		cout << arr[i] << " ";
 	}
-	FFT(vec, n, d);
-	cout << "...printing the FFT of the array specified" << endl;
-	for (int j = 0; j < n; j++)
-		cout << vec[j] << endl;
+	cout << endl;
+	int arr_up[8];
+
+	Up_sampling(arr, 5, arr_up, 2);
+	for (int i = 0; i < 10; i++)
+	{
+		cout<< arr_up[i] << " ";
+	}
+	cout << endl;
+	Down_sampling(arr_up, 10, arr, 2);
+
+	for (int i = 0; i <5; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+	while (1);
 	return 0;
 }
