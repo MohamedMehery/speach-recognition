@@ -251,3 +251,11 @@ pitch_freq_mtx = pitch_freq_mtx.^2;
 pitch_time_mtx = pitch_time_mtx.^2;
 pitch_timeindex_mtx  = pitch_timeindex_mtx .^2;
 pitch_freqindex_mtx = pitch_freqindex_mtx.^2;
+
+All_features = [pitch_freqindex_mtx , pitch_timeindex_mtx];
+Output = zeros(10,10);
+for i = 1 : 10
+    for j = i
+        Output(i , j) = 1;
+    end
+end
