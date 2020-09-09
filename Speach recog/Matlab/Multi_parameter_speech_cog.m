@@ -29,7 +29,7 @@ input_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 input_voice_samples = zeros(sample_length , 10);
 fft_input_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     

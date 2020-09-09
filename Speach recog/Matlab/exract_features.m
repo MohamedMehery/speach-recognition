@@ -24,7 +24,7 @@ zero_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 zero_voice_samples = zeros(sample_length , 10);
 fft_zero_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -46,7 +46,7 @@ one_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 one_voice_samples = zeros(sample_length , 10);
 fft_one_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -67,7 +67,7 @@ two_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 two_voice_samples = zeros(sample_length , 10);
 fft_two_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -90,7 +90,7 @@ three_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 three_voice_samples = zeros(sample_length , 10);
 fft_three_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -113,7 +113,7 @@ four_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 four_voice_samples = zeros(sample_length , 10);
 fft_four_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -136,7 +136,7 @@ five_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 five_voice_samples = zeros(sample_length , 10);
 fft_five_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -159,7 +159,7 @@ six_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 six_voice_samples = zeros(sample_length , 10);
 fft_six_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -182,7 +182,7 @@ seven_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 seven_voice_samples = zeros(sample_length , 10);
 fft_seven_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -205,7 +205,7 @@ eight_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 eight_voice_samples = zeros(sample_length , 10);
 fft_eight_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
@@ -228,7 +228,7 @@ nine_voice(fs,1) = 0;
 sample_length = fs/10 ;  
 nine_voice_samples = zeros(sample_length , 10);
 fft_nine_samples = zeros(sample_length , 10);
-f = 4000*linspace(-1,1,2*fs); 
+f =( fs/2)*linspace(-1,1,fs); 
 t = linspace(0,1 , fs);
 for sample_nums = 0:9
     
